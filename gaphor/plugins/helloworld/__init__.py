@@ -8,7 +8,7 @@ class HelloWorldPlugin(object):
 
     interface.implements(IService, IActionProvider)
 
-    gui_manager = inject('gui_manager')
+    main_window = inject('main_window')
 
     menu_xml = """
       <ui>
@@ -33,7 +33,7 @@ class HelloWorldPlugin(object):
     @action(name='helloworld', label=_('Hello world'),
             tooltip=_('Every application should have a Hello world plugin!'))
     def helloworld_action(self):
-        main_window = self.gui_manager.main_window
+        main_window = self.main_window
         import gtk
         dialog = gtk.MessageDialog(
                 parent=main_window.window,
