@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "gaphor.plugins.helloworld"
+version = "0.1.0"
+description = "Example (Hello World) service/plugin for Gaphor"
+authors = [
+    "Arjan J. Molenaar <gaphor@gmail.com>",
+    "Dan Yeaw <dan@yeaw.me>"
+]
+readme = "README.md"
+license = "Apache-2.0"
+packages = [
+  { include="plugins", from = "gaphor" }
+]
+keywords = ["gaphor", "hello world", "example", "examples"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+gaphor = "^1.1.1"
+
+[tool.poetry.dev-dependencies]
+
+[tool.poetry.plugins."gaphor.services"]
+"helloworld" = "gaphor.plugins.helloworld:HelloWorldPlugin"
+
+[build-system]
+requires = ["poetry==1.0.0b3"]
+build-backend = "poetry.masonry.api"
