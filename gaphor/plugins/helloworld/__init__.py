@@ -1,14 +1,16 @@
+import logging
+import gi
 
-from zope import interface
-from gaphor.interfaces import IService, IActionProvider
-from gaphor.core import _, inject, action, build_action_group
+from gaphor.abc import ActionProvider, Service
+from gaphor.core import action, gettext
+
+gi.require_version("Gtk", "3.0")
+from gi.repository import Gtk
+
+log = logging.getLogger(__name__)
 
 
-class HelloWorldPlugin(object):
-
-    interface.implements(IService, IActionProvider)
-
-    main_window = inject('main_window')
+class HelloWorldPlugin(Service, ActionProvider):
 
     menu_xml = """
       <ui>
@@ -20,28 +22,24 @@ class HelloWorldPlugin(object):
       </ui>
     """
 
-    def __init__(self):
-        self.action_group = build_action_group(self)       
-
-    def init(self, app):
-        self._app = app
-        log.info('Hello world plugin initialized')
+    def __init__(self, main_window, export_menu):
+        export_menu.add_actions(self)
 
     def shutdown(self):
         pass
 
-    @action(name='helloworld', label=_('Hello world'),
-            tooltip=_('Every application should have a Hello world plugin!'))
+    @action(
+        name="helloworld",
+        label=gettext("Hello world"),
+        tooltip=gettext("Every application should have a Hello world plugin!"),
+    )
     def helloworld_action(self):
         main_window = self.main_window
-        import gtk
-        dialog = gtk.MessageDialog(
-                parent=main_window.window,
-	        type=gtk.MESSAGE_INFO,
-	        buttons=gtk.BUTTONS_OK,
-	        message_format='Every application should have a Hello world plugin!')
+        dialog = Gtk.MessageDialog(
+            parent=main_window.window,
+            type=Gtk.MessageType.INFO,
+            buttons=Gtk.ButtonsType.OK,
+            message_format="Every application should have a Hello world plugin!",
+        )
         dialog.run()
         dialog.destroy()
-
-
-# vim: sw=4:et:ai
