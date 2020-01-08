@@ -2,7 +2,12 @@ import logging
 import gi
 
 from gaphor.abc import ActionProvider, Service
-from gaphor.core import action, gettext
+from gaphor.core import action
+try:
+    from gaphor.core import gettext
+except ImportError:
+    def gettext(s): return s
+
 
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
@@ -12,18 +17,9 @@ log = logging.getLogger(__name__)
 
 class HelloWorldPlugin(Service, ActionProvider):
 
-    menu_xml = """
-      <ui>
-        <menubar name="mainwindow">
-          <menu action="help">
-            <menuitem action="helloworld" />
-          </menu>
-        </menubar>
-      </ui>
-    """
-
-    def __init__(self, main_window, export_menu):
-        export_menu.add_actions(self)
+    def __init__(self, main_window, tools_menu):
+        self.main_window = main_window
+        tools_menu.add_actions(self)
 
     def shutdown(self):
         pass
