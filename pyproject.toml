@@ -9,7 +9,7 @@ authors = [
 readme = "README.md"
 license = "Apache-2.0"
 packages = [
-  { include="helloworld", from = "gaphor/plugins" }
+  { include="gaphor_helloworld_plugin" }
 ]
 keywords = ["gaphor", "hello world", "example", "examples"]
 

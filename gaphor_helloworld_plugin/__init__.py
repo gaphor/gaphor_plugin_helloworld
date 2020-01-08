@@ -2,7 +2,12 @@ import logging
 import gi
 
 from gaphor.abc import ActionProvider, Service
-from gaphor.core import action, gettext
+from gaphor.core import action
+try:
+    from gaphor.core import gettext
+except ImportError:
+    def gettext(s): return s
+
 
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
