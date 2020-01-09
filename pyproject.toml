@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "gaphor.plugins.helloworld"
+name = "gaphor_helloworld_plugin"
 version = "0.1.0"
 description = "Example (Hello World) service/plugin for Gaphor"
 authors = [
@@ -8,9 +8,6 @@ authors = [
 ]
 readme = "README.md"
 license = "Apache-2.0"
-packages = [
-  { include="gaphor_helloworld_plugin" }
-]
 keywords = ["gaphor", "hello world", "example", "examples"]
 
 [tool.poetry.dependencies]
@@ -20,7 +17,7 @@ gaphor = "^1.1.1"
 [tool.poetry.dev-dependencies]
 
 [tool.poetry.plugins."gaphor.services"]
-"helloworld" = "gaphor.plugins.helloworld:HelloWorldPlugin"
+"helloworld" = "gaphor_helloworld_plugin:HelloWorldPlugin"
 
 [build-system]
 requires = ["poetry==1.0.0b3"]
