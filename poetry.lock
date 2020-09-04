@@ -1,126 +1,161 @@
 [[package]]
-category = "main"
-description = "Clean single-source support for Python 3 and 2"
-name = "future"
-optional = false
-python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
-version = "0.17.1"
-
-[[package]]
-category = "main"
-description = "Gaphas is a GTK+ based diagramming widget"
 name = "gaphas"
+version = "2.1.2"
+description = "Gaphas is a GTK+ based diagramming widget"
+category = "main"
 optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
-version = "1.1.2"
+python-versions = ">=3.6,<4.0"
 
 [package.dependencies]
-PyGObject = ">=3.20.0,<4.0.0"
-future = ">=0.17.0,<0.18.0"
+importlib_metadata = ">=1.3.0,<2.0.0"
 pycairo = ">=1.13.0,<2.0.0"
+PyGObject = ">=3.20.0,<4.0.0"
 
 [[package]]
-category = "main"
-description = "Gaphor is the simple modeling tool written in Python."
 name = "gaphor"
+version = "2.0.1"
+description = "Gaphor is the simple modeling tool written in Python."
+category = "main"
 optional = false
 python-versions = ">=3.7,<4.0"
-version = "1.1.1"
 
 [package.dependencies]
-PyGObject = ">=3.30,<4.0"
-gaphas = ">=1.0.0,<2.0.0"
-importlib_metadata = ">=0.23,<0.24"
+gaphas = ">=2.1.1,<3.0.0"
+generic = ">=1.0.0,<2.0.0"
+importlib_metadata = ">=1.4,<2.0"
 pycairo = ">=1.18,<2.0"
+PyGObject = ">=3.30,<4.0"
+tinycss2 = ">=1.0.2,<2.0.0"
+typing_extensions = ">=3.7.4,<4.0.0"
 
 [[package]]
+name = "generic"
+version = "1.0.0"
+description = "Generic programming library for Python"
 category = "main"
-description = "Read metadata from Python packages"
-name = "importlib-metadata"
 optional = false
-python-versions = ">=2.7,!=3.0,!=3.1,!=3.2,!=3.3"
-version = "0.23"
+python-versions = ">=3.7,<4.0"
+
+[[package]]
+name = "importlib-metadata"
+version = "1.7.0"
+description = "Read metadata from Python packages"
+category = "main"
+optional = false
+python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,>=2.7"
+
+[package.extras]
+docs = ["sphinx", "rst.linker"]
+testing = ["packaging", "pep517", "importlib-resources (>=1.3)"]
 
 [package.dependencies]
 zipp = ">=0.5"
 
-[package.extras]
-docs = ["sphinx", "rst.linker"]
-testing = ["packaging", "importlib-resources"]
-
 [[package]]
-category = "main"
-description = "More routines for operating on iterables, beyond itertools"
-name = "more-itertools"
-optional = false
-python-versions = ">=3.5"
-version = "8.0.2"
-
-[[package]]
-category = "main"
-description = "Python interface for cairo"
 name = "pycairo"
+version = "1.19.1"
+description = "Python interface for cairo"
+category = "main"
 optional = false
-python-versions = "*"
-version = "1.18.2"
+python-versions = ">=3.5, <4"
 
 [[package]]
-category = "main"
-description = "Python bindings for GObject Introspection"
 name = "pygobject"
+version = "3.36.1"
+description = "Python bindings for GObject Introspection"
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, <4"
-version = "3.34.0"
 
 [package.dependencies]
 pycairo = ">=1.11.1"
 
 [[package]]
+name = "tinycss2"
+version = "1.0.2"
+description = "Low-level CSS parser for Python"
 category = "main"
-description = "Backport of pathlib-compatible object wrapper for zip files"
-name = "zipp"
 optional = false
-python-versions = ">=2.7"
-version = "0.6.0"
+python-versions = ">= 3.5"
+
+[package.extras]
+doc = ["sphinx", "sphinx-rtd-theme"]
+test = ["pytest-runner", "pytest-cov", "pytest-flake8", "pytest-isort"]
 
 [package.dependencies]
-more-itertools = "*"
+setuptools = ">=39.2.0"
+webencodings = ">=0.4"
+
+[[package]]
+name = "typing-extensions"
+version = "3.7.4.3"
+description = "Backported and Experimental Type Hints for Python 3.5+"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "webencodings"
+version = "0.5.1"
+description = "Character encoding aliases for legacy web content"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "zipp"
+version = "3.1.0"
+description = "Backport of pathlib-compatible object wrapper for zip files"
+category = "main"
+optional = false
+python-versions = ">=3.6"
 
 [package.extras]
 docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
-testing = ["pathlib2", "contextlib2", "unittest2"]
+testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "acdd6e5056a07ceca5dd6f94769232bc3b321f07e857ed05cffdf30ebf853a89"
+lock-version = "1.0"
 python-versions = "^3.8"
+content-hash = "852e048eeb74cd74f04a6a3b856def48e492bd8a747979604ef40b1b6a46c67c"
 
 [metadata.files]
-future = [
-    {file = "future-0.17.1.tar.gz", hash = "sha256:67045236dcfd6816dc439556d009594abf643e5eb48992e36beac09c2ca659b8"},
-]
 gaphas = [
-    {file = "gaphas-1.1.2-py2.py3-none-any.whl", hash = "sha256:11d248941b3bd9890323a61c438f1945839bb3cd91bffa3583d4179091cfc8bd"},
-    {file = "gaphas-1.1.2.tar.gz", hash = "sha256:f1254f64b709da5722878e1b43a435bb199d12e836f255d517b42fe94ac45b26"},
+    {file = "gaphas-2.1.2-py3-none-any.whl", hash = "sha256:8614233101867319e98adf261101d7069d3730b9b0b6c1b38deaea7d9e7e1358"},
+    {file = "gaphas-2.1.2.tar.gz", hash = "sha256:3d9aa4a24870a8f59d597b4faf1ca204878d9895c2e8c2f34b8395769e0112c2"},
 ]
 gaphor = [
-    {file = "gaphor-1.1.1-py3-none-any.whl", hash = "sha256:bdc61fc21e9c1e0a3a836d2a12f995bd0d3bc5ff76564582433f6166e1b92ffe"},
-    {file = "gaphor-1.1.1.tar.gz", hash = "sha256:d4a07b37d79a3a39702bdf7020d72d72eb99600360216e739799819e8b6387b5"},
+    {file = "gaphor-2.0.1-py3-none-any.whl", hash = "sha256:e78145643cd1b67d4eebbbeb3ad2f28e525223e9d7be162edbae3f449cbe35ca"},
+    {file = "gaphor-2.0.1.tar.gz", hash = "sha256:4aac8855a866da39a400b54b8ee2c538b65295af885598fe75fe7f0044c622d9"},
+]
+generic = [
+    {file = "generic-1.0.0-py3-none-any.whl", hash = "sha256:a8dbb3133929223149272fcc70a95967cf3b24e3fa12601f91c67fb61efe29d4"},
+    {file = "generic-1.0.0.tar.gz", hash = "sha256:c7651fb460feae762065b4a29afbfe2a346b2b18dccd4a8495a7e978498f66bc"},
 ]
 importlib-metadata = [
-    {file = "importlib_metadata-0.23-py2.py3-none-any.whl", hash = "sha256:d5f18a79777f3aa179c145737780282e27b508fc8fd688cb17c7a813e8bd39af"},
-    {file = "importlib_metadata-0.23.tar.gz", hash = "sha256:aa18d7378b00b40847790e7c27e11673d7fed219354109d0e7b9e5b25dc3ad26"},
-]
-more-itertools = [
-    {file = "more-itertools-8.0.2.tar.gz", hash = "sha256:b84b238cce0d9adad5ed87e745778d20a3f8487d0f0cb8b8a586816c7496458d"},
-    {file = "more_itertools-8.0.2-py3-none-any.whl", hash = "sha256:c833ef592a0324bcc6a60e48440da07645063c453880c9477ceb22490aec1564"},
+    {file = "importlib_metadata-1.7.0-py2.py3-none-any.whl", hash = "sha256:dc15b2969b4ce36305c51eebe62d418ac7791e9a157911d58bfb1f9ccd8e2070"},
+    {file = "importlib_metadata-1.7.0.tar.gz", hash = "sha256:90bb658cdbbf6d1735b6341ce708fc7024a3e14e99ffdc5783edea9f9b077f83"},
 ]
 pycairo = [
-    {file = "pycairo-1.18.2.tar.gz", hash = "sha256:dcb853fd020729516e8828ad364084e752327d4cff8505d20b13504b32b16531"},
+    {file = "pycairo-1.19.1.tar.gz", hash = "sha256:2c143183280feb67f5beb4e543fd49990c28e7df427301ede04fc550d3562e84"},
 ]
 pygobject = [
-    {file = "PyGObject-3.34.0.tar.gz", hash = "sha256:2acb0daf2b3a23a90f52066cc23d1053339fee2f5f7f4275f8baa3704ae0c543"},
+    {file = "PyGObject-3.36.1.tar.gz", hash = "sha256:012a589aec687bfa809a1ff9f5cd775dc7f6fcec1a6bc7fe88e1002a68f8ba34"},
+]
+tinycss2 = [
+    {file = "tinycss2-1.0.2-py3-none-any.whl", hash = "sha256:9fdacc0e22d344ddd2ca053837c133900fe820ae1222f63b79617490a498507a"},
+    {file = "tinycss2-1.0.2.tar.gz", hash = "sha256:6427d0e3faa0a5e0e8c9f6437e2de26148a7a197a8b0992789f23d9a802788cf"},
+]
+typing-extensions = [
+    {file = "typing_extensions-3.7.4.3-py2-none-any.whl", hash = "sha256:dafc7639cde7f1b6e1acc0f457842a83e722ccca8eef5270af2d74792619a89f"},
+    {file = "typing_extensions-3.7.4.3-py3-none-any.whl", hash = "sha256:7cb407020f00f7bfc3cb3e7881628838e69d8f3fcab2f64742a5e76b2f841918"},
+    {file = "typing_extensions-3.7.4.3.tar.gz", hash = "sha256:99d4073b617d30288f569d3f13d2bd7548c3a7e4c8de87db09a9d29bb3a4a60c"},
+]
+webencodings = [
+    {file = "webencodings-0.5.1-py2.py3-none-any.whl", hash = "sha256:a0af1213f3c2226497a97e2b3aa01a7e4bee4f403f95be16fc9acd2947514a78"},
+    {file = "webencodings-0.5.1.tar.gz", hash = "sha256:b36a1c245f2d304965eb4e0a82848379241dc04b865afcc4aab16748587e1923"},
 ]
 zipp = [
-    {file = "zipp-0.6.0-py2.py3-none-any.whl", hash = "sha256:f06903e9f1f43b12d371004b4ac7b06ab39a44adc747266928ae6debfa7b3335"},
-    {file = "zipp-0.6.0.tar.gz", hash = "sha256:3718b1cbcd963c7d4c5511a8240812904164b7f381b647143a89d3b98f9bcd8e"},
+    {file = "zipp-3.1.0-py3-none-any.whl", hash = "sha256:aa36550ff0c0b7ef7fa639055d797116ee891440eac1a56f378e2d3179e0320b"},
+    {file = "zipp-3.1.0.tar.gz", hash = "sha256:c599e4d75c98f6798c509911d08a22e6c021d074469042177c8c86fb92eefd96"},
 ]
