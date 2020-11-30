@@ -12,7 +12,7 @@ keywords = ["gaphor", "hello world", "example", "examples"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-gaphor = "^2.0"
+gaphor = "^2.1"
 
 [tool.poetry.dev-dependencies]
 
