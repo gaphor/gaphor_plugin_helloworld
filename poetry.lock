@@ -13,7 +13,7 @@ typing-extensions = ">=3.7.4,<4.0.0"
 
 [[package]]
 name = "gaphor"
-version = "2.2.1"
+version = "2.2.2"
 description = "Gaphor is the simple modeling tool written in Python."
 category = "main"
 optional = false
@@ -124,8 +124,8 @@ gaphas = [
     {file = "gaphas-3.0.0.tar.gz", hash = "sha256:a15810011a83d0c0a0343c7f436a8e428e1d6109f31dd03b542bd2c929eb9695"},
 ]
 gaphor = [
-    {file = "gaphor-2.2.1-py3-none-any.whl", hash = "sha256:d686a66f21e1ca980f24363e2c1b114d1e741334e393a08a5d59735d56cfb129"},
-    {file = "gaphor-2.2.1.tar.gz", hash = "sha256:5ca7802729203e0f2035069f0cd13c0cfc38fd1b15fad4f7d5931520d4d97efe"},
+    {file = "gaphor-2.2.2-py3-none-any.whl", hash = "sha256:323c4235ae47744e1c4f4efc28ba955e2d34aa79e74fced5e4fd3c598a058d77"},
+    {file = "gaphor-2.2.2.tar.gz", hash = "sha256:73892af98ce8efbfaac91d84f211465cfdbfcd3588c020c0d895027f1552f14d"},
 ]
 generic = [
     {file = "generic-1.0.0-py3-none-any.whl", hash = "sha256:a8dbb3133929223149272fcc70a95967cf3b24e3fa12601f91c67fb61efe29d4"},
