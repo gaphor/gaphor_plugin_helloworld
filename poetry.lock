@@ -13,7 +13,7 @@ typing-extensions = ">=3.7.4,<4.0.0"
 
 [[package]]
 name = "gaphor"
-version = "2.4.2"
+version = "2.5.0"
 description = "Gaphor is the simple modeling tool written in Python."
 category = "main"
 optional = false
@@ -116,7 +116,7 @@ testing = ["jaraco.itertools", "func-timeout"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "903e312a6e9428dc961125fbb12515d485552cf4a7ac88028c4340b61c957b00"
+content-hash = "9f1c2d3560cf372a20647fb629816857c0434b118e660a4e3d3a0ad430a5a0a1"
 
 [metadata.files]
 gaphas = [
@@ -124,8 +124,8 @@ gaphas = [
     {file = "gaphas-3.1.1.tar.gz", hash = "sha256:2fa90214de8873d3336053a37bc9e2f2848d2e81cf72ccdc0a9245f5f819f29f"},
 ]
 gaphor = [
-    {file = "gaphor-2.4.2-py3-none-any.whl", hash = "sha256:5f8a5f19a1c054f2a161d9a89438f72515f50fcb72b741436fa0d151f583b77c"},
-    {file = "gaphor-2.4.2.tar.gz", hash = "sha256:f7c16e17ca54273bec25c36fc14aa63b5972a8960c713b138862872c3f65c43b"},
+    {file = "gaphor-2.5.0-py3-none-any.whl", hash = "sha256:d3f883190781ffa0e28a0ffa67419b7b2d165ca5407e1dcb50ba3458f66015df"},
+    {file = "gaphor-2.5.0.tar.gz", hash = "sha256:2aa1fb01b864a63490626202a4c7abbbbafffbc72d68081fe5d8c36229784ab8"},
 ]
 generic = [
     {file = "generic-1.0.0-py3-none-any.whl", hash = "sha256:a8dbb3133929223149272fcc70a95967cf3b24e3fa12601f91c67fb61efe29d4"},
