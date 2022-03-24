@@ -11,8 +11,8 @@ license = "Apache-2.0"
 keywords = ["gaphor", "hello world", "example", "examples"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
-gaphor = "^2.5"
+python = "^3.9"
+gaphor = "^2.9"
 
 [tool.poetry.dev-dependencies]
 
