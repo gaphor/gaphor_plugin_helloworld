@@ -11,13 +11,23 @@ license = "Apache-2.0"
 keywords = ["gaphor", "hello world", "example", "examples"]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = ">=3.9,<3.12"
 
 [tool.poetry.group.dev.dependencies]
+# Gaphor should be a dev-dependency, so it's not installed as part of the plugin
 gaphor = "^2.11"
+pytest = "^7.1"
 
 [tool.poetry.plugins."gaphor.services"]
-"helloworld" = "gaphor_helloworld_plugin:HelloWorldPlugin"
+"hello_world" = "gaphor_helloworld_plugin:HelloWorldPlugin"
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tests",
+]
+addopts = [
+    "--import-mode=importlib",
+]
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
