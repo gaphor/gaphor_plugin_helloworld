@@ -12,9 +12,9 @@ keywords = ["gaphor", "hello world", "example", "examples"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-gaphor = "^2.11"
 
 [tool.poetry.group.dev.dependencies]
+gaphor = "^2.11"
 
 [tool.poetry.plugins."gaphor.services"]
 "helloworld" = "gaphor_helloworld_plugin:HelloWorldPlugin"
