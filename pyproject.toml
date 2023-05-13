@@ -14,11 +14,11 @@ keywords = ["gaphor", "hello world", "example", "examples"]
 python = "^3.9"
 gaphor = "^2.11"
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 
 [tool.poetry.plugins."gaphor.services"]
 "helloworld" = "gaphor_helloworld_plugin:HelloWorldPlugin"
 
 [build-system]
-requires = ["poetry==1.0.10"]
-build-backend = "poetry.masonry.api"
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
