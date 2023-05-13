@@ -1,0 +1,39 @@
+name: build
+
+on:
+  push:
+  release:
+    types: [created, published]
+
+env:
+  PYTHON_VERSION: '3.11'
+  POETRY_VERSION: '1.4.1'
+
+jobs:
+
+  test:
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3.5.2
+      - name: Install Linux Dependencies
+        run: >
+          sudo apt-get update -qq && sudo apt-get install -qq --no-install-recommends
+          gir1.2-gtk-4.0 libgirepository1.0-dev libgtksourceview-5-dev libadwaita-1-dev
+          graphviz
+      - name: Set up Python ${{ env.PYTHON_VERSION }}
+        uses: actions/setup-python@v4.6.0
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - name: Install Poetry ${{ env.POETRY_VERSION }}
+        run: |
+          python -m pip install --upgrade pip
+          pip install poetry==$POETRY_VERSION
+          poetry config virtualenvs.in-project true
+      - name: Install dependencies
+        run: poetry install --no-interaction
+      - name: Gaphor self-test
+        run: xvfb-run poetry run gaphor --self-test
+      - name: Test
+        run: xvfb-run poetry run pytest
