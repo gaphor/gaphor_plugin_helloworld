@@ -23,7 +23,7 @@ jobs:
           gir1.2-gtk-4.0 libgirepository1.0-dev libgtksourceview-5-dev libadwaita-1-dev
           graphviz
       - name: Set up Python ${{ env.PYTHON_VERSION }}
-        uses: actions/setup-python@v4.6.0
+        uses: actions/setup-python@v4.6.1
         with:
           python-version: ${{ env.PYTHON_VERSION }}
       - name: Install Poetry ${{ env.POETRY_VERSION }}
