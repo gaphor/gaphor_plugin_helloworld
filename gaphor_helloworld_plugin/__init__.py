@@ -21,7 +21,7 @@ class HelloWorldPlugin(Service, ActionProvider):
 
     @action(
         name="helloworld",
-        label=gettext("Hello world"),
+        label=gettext("Hello World"),
         tooltip=gettext("Every application should have a Hello world plugin!"),
     )
     def helloworld_action(self):
