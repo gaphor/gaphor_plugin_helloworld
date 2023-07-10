@@ -146,13 +146,13 @@ docs = ["furo (>=2022,<2024)", "gaphor (>=2.15.0,<3.0.0)", "sphinx (>=4.3,<7.0)"
 
 [[package]]
 name = "gaphor"
-version = "2.19.1"
+version = "2.19.2"
 description = "Gaphor is the simple modeling tool written in Python."
 optional = false
-python-versions = ">=3.9,<3.12"
+python-versions = ">=3.9,<3.13"
 files = [
-    {file = "gaphor-2.19.1-py3-none-any.whl", hash = "sha256:f2329f652125084181a7299d009f530996ca2d50e8d966a1e7ab94c7a1126e93"},
-    {file = "gaphor-2.19.1.tar.gz", hash = "sha256:b55b75fd21e3a1f3c558bdc93042431313b5856c95a4531b0254178c84598471"},
+    {file = "gaphor-2.19.2-py3-none-any.whl", hash = "sha256:6ddfc2d0a594bd4faea4f6c5911e3f2461440aaea635412486ce337d4aa7e338"},
+    {file = "gaphor-2.19.2.tar.gz", hash = "sha256:4781ae943647f537685ffe200886fba27943dffe571edc42fcf21c27c08c8082"},
 ]
 
 [package.dependencies]
@@ -163,7 +163,7 @@ generic = ">=1.0.0,<2.0.0"
 jedi = ">=0.18.1,<0.19.0"
 pycairo = ">=1.22.0,<2.0.0"
 pydot = ">=1.4.2,<2.0.0"
-pygit2 = ">=1.11.1,<2.0.0"
+pygit2 = {version = ">=1.11.1,<2.0.0", markers = "python_version < \"3.12\""}
 PyGObject = ">=3.30,<4.0"
 pyobjc-framework-cocoa = {version = ">=9.0.1,<10.0.0", markers = "sys_platform == \"darwin\""}
 tinycss2 = ">=1.0.2,<2.0.0"
