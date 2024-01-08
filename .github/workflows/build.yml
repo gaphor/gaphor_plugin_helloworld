@@ -25,17 +25,24 @@ jobs:
         with:
           egress-policy: audit
 
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
       - name: Install Linux Dependencies
         run: >
           dnf install -y gcc git graphviz pkg-config python-launcher upx
           xorg-x11-server-Xvfb gtk4 gobject-introspection-devel
           cairo-gobject-devel gtksourceview5-devel libadwaita-devel cairo-devel
           python${{ env.python_version }}-devel
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      - name: Set ownership of checkout directory
+        run: chown -R $(id -u):$(id -g) $PWD
       - name: Set up Python ${{ env.python_version }}
         uses: actions/setup-python@0a5c61591373683505ea898e09a3ea4f39ef2b9c # v5.0.0
         with:
           python-version: ${{ env.python_version }}
+      - name: Install pipx
+        run: |
+          python${{ env.python_version }} -m ensurepip
+          python${{ env.python_version }} -m pip install pipx
+          echo "/github/home/.local/bin" >> $GITHUB_PATH
       - name: Install Poetry
         run: pipx install --python ${{ env.python_version }} --pip-args=--constraint=.github/constraints.txt poetry
       - name: Install dependencies
