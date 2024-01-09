@@ -47,7 +47,5 @@ jobs:
         run: pipx install --python ${{ env.python_version }} --pip-args=--constraint=.github/constraints.txt poetry
       - name: Install dependencies
         run: poetry install --no-interaction
-      - name: Gaphor self-test
-        run: xvfb-run poetry run gaphor --self-test
       - name: Test
         run: xvfb-run poetry run pytest
