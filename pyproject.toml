@@ -15,7 +15,7 @@ python = ">=3.10,<3.13"
 
 [tool.poetry.group.dev.dependencies]
 # Gaphor should be a dev-dependency, so it's not installed as part of the plugin
-gaphor = "^2.19"
+gaphor = "^2.23"
 pytest = "^7.4"
 
 [tool.poetry.plugins."gaphor.services"]
