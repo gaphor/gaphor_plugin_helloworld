@@ -148,13 +148,13 @@ docs = ["furo (>=2022,<2024)", "sphinx (>=4.3,<8.0)"]
 
 [[package]]
 name = "gaphor"
-version = "2.23.0"
+version = "2.23.2"
 description = "Gaphor is the simple modeling tool written in Python."
 optional = false
 python-versions = ">=3.10,<3.13"
 files = [
-    {file = "gaphor-2.23.0-py3-none-any.whl", hash = "sha256:7a05f5f99f8cbed027f9e12f9efab162b541d081151b1e9d8089131c6aa54eff"},
-    {file = "gaphor-2.23.0.tar.gz", hash = "sha256:fc9bd6bf3369ad8f02b0c05e2cf74c47858465ae8e52152fd93760648e64a68b"},
+    {file = "gaphor-2.23.2-py3-none-any.whl", hash = "sha256:5a6ff4dcc7d19390eb43fd4405579e33ddd9269566be2e0946c05a6993716484"},
+    {file = "gaphor-2.23.2.tar.gz", hash = "sha256:9b295591c06c84b6d750576cde5f8c2b320b9df156a579e33cea5c4819a24885"},
 ]
 
 [package.dependencies]
@@ -584,4 +584,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10,<3.13"
-content-hash = "113ca0da23d73c06a840fc8c37677751ecd0704102b3828c7ea57dd01ef4353a"
+content-hash = "9a6ce15b339e6bbadb2345c9dc5658e55a2489b15b8f9590beb50d32837dd470"
