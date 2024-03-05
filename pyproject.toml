@@ -16,7 +16,7 @@ python = ">=3.10,<3.13"
 [tool.poetry.group.dev.dependencies]
 # Gaphor should be a dev-dependency, so it's not installed as part of the plugin
 gaphor = "^2.23"
-pytest = "^8.0"
+pytest = "^8.1"
 
 [tool.poetry.plugins."gaphor.services"]
 "hello_world" = "gaphor_helloworld_plugin:HelloWorldPlugin"
