@@ -44,7 +44,9 @@ jobs:
           python${{ env.python_version }} -m pip install pipx
           echo "/github/home/.local/bin" >> $GITHUB_PATH
       - name: Install Poetry
-        run: pipx install --python ${{ env.python_version }} --pip-args=--constraint=.github/constraints.txt poetry
+        run: >
+          pipx install --python ${{ env.python_version }}
+          --pip-args="--constraint=$GITHUB_WORKSPACE/.github/constraints.txt" poetry
       - name: Install dependencies
         run: poetry install --no-interaction
       - name: Test
