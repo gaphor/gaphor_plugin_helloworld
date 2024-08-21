@@ -28,26 +28,33 @@ jobs:
       - name: Install Linux Dependencies
         run: >
           dnf install -y gcc git graphviz pkg-config python-launcher upx
-          xorg-x11-server-Xvfb gtk4 gobject-introspection-devel
+          mutter dbus-x11 gtk4 gobject-introspection-devel
           cairo-gobject-devel gtksourceview5-devel libadwaita-devel cairo-devel
-          python${{ env.python_version }}-devel
+          python${{ matrix.python_version }}-devel
       - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
       - name: Set ownership of checkout directory
         run: chown -R $(id -u):$(id -g) $PWD
       - name: Set up Python ${{ env.python_version }}
         uses: actions/setup-python@f677139bbe7f9c59b41e40162b753c062f5d49a3 # v5.2.0
         with:
           python-version: ${{ env.python_version }}
-      - name: Install pipx
+      - name: Install Poetry
         run: |
           python${{ env.python_version }} -m ensurepip
-          python${{ env.python_version }} -m pip install pipx
-          echo "/github/home/.local/bin" >> $GITHUB_PATH
-      - name: Install Poetry
-        run: >
-          pipx install --python ${{ env.python_version }}
-          --pip-args="--constraint=$GITHUB_WORKSPACE/.github/constraints.txt" poetry
-      - name: Install dependencies
-        run: poetry install --no-interaction
-      - name: Test
-        run: xvfb-run poetry run pytest
+          python${{ env.python_version }} -m pip install --constraint=.github/constraints.txt poetry
+      - name: Configure Poetry
+        run: poetry config virtualenvs.in-project true
+      - name: Install Python Dependencies
+        run: |
+          poetry lock --no-update
+          poetry install --no-interaction
+      - name: Install settings schemas
+        run: poetry run gaphor install-schemas
+      - name: Run Tests
+        env:
+          XDG_RUNTIME_DIR: /tmp
+        run: |
+          eval $(dbus-launch --auto-syntax)
+          mutter --wayland --no-x11 --sm-disable --headless -- poetry run pytest
