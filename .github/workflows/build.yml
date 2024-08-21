@@ -30,12 +30,17 @@ jobs:
           dnf install -y gcc git graphviz pkg-config python-launcher upx
           mutter dbus-x11 gtk4 gobject-introspection-devel
           cairo-gobject-devel gtksourceview5-devel libadwaita-devel cairo-devel
-          python${{ matrix.python_version }}-devel
+          python${{ env.python_version }}-devel
       - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
         with:
           ref: ${{ github.event.pull_request.head.sha }}
       - name: Set ownership of checkout directory
         run: chown -R $(id -u):$(id -g) $PWD
+      - name: Use Python Dependency Cache
+        uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
+        with:
+          path: ~/.cache/pip
+          key: python${{ env.python_version }}-${{ hashFiles('**/poetry.lock') }}-39
       - name: Set up Python ${{ env.python_version }}
         uses: actions/setup-python@f677139bbe7f9c59b41e40162b753c062f5d49a3 # v5.2.0
         with:
