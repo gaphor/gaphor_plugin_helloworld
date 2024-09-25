@@ -15,7 +15,7 @@ jobs:
 
   test:
     runs-on: ubuntu-22.04
-    container: fedora:39
+    container: fedora:41
     timeout-minutes: 30
     permissions:
       contents: write
@@ -40,7 +40,7 @@ jobs:
         uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
         with:
           path: ~/.cache/pip
-          key: python${{ env.python_version }}-${{ hashFiles('**/poetry.lock') }}-39
+          key: python${{ env.python_version }}-${{ hashFiles('**/poetry.lock') }}-41
       - name: Set up Python ${{ env.python_version }}
         uses: actions/setup-python@f677139bbe7f9c59b41e40162b753c062f5d49a3 # v5.2.0
         with:
