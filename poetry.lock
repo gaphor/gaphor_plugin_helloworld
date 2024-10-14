@@ -133,13 +133,13 @@ PyGObject = ">=3.38.0,<4.0.0"
 
 [[package]]
 name = "gaphor"
-version = "2.26.0"
+version = "2.27.0"
 description = "Gaphor is the simple modeling tool written in Python."
 optional = false
 python-versions = "<3.13,>=3.11"
 files = [
-    {file = "gaphor-2.26.0-py3-none-any.whl", hash = "sha256:7779fda89f006079576afffe983490b5bb9c415ff0deb673b552bf21eabb2bf7"},
-    {file = "gaphor-2.26.0.tar.gz", hash = "sha256:7b42b96df80faa5261f2aac0cf8d1cff0dc037391f6bfeadc6eab34032585df1"},
+    {file = "gaphor-2.27.0-py3-none-any.whl", hash = "sha256:54c825327c6f2b019f88b16bf2537ba849366ea4dce9ee56848b562973bdc77a"},
+    {file = "gaphor-2.27.0.tar.gz", hash = "sha256:32c6c478ea29e8eb2ad879fa0a4a2bb17b7cfdb4d8fff4075bfb8297414450de"},
 ]
 
 [package.dependencies]
@@ -152,7 +152,7 @@ generic = ">=1.0.0,<2.0.0"
 jedi = ">=0.18.1,<0.20.0"
 pillow = ">=10.0.0"
 pycairo = ">=1.22.0,<2.0.0"
-pydot = ">=1.4.2,<3.0.0"
+pydot = ">=1.4.2,<4.0.0"
 PyGObject = ">=3.30,<4.0"
 pyobjc-framework-cocoa = {version = ">=9.0.1,<11.0.0", markers = "sys_platform == \"darwin\""}
 tinycss2 = ">=1.0.2,<2.0.0"
@@ -528,4 +528,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.11,<3.13"
-content-hash = "b39e7c4ec63ea0852470038e56670aefb39ba4d81e6c189a983f619090f29502"
+content-hash = "345c2f1d2230156d4be1a47156d0a82d85d2e6394460ae762c259785df9646c1"
