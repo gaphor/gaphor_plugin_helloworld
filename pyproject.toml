@@ -1,25 +1,27 @@
-[tool.poetry]
+[project]
 name = "gaphor_helloworld_plugin"
 version = "0.1.0"
 description = "Example (Hello World) service/plugin for Gaphor"
 authors = [
-    "Arjan J. Molenaar <gaphor@gmail.com>",
-    "Dan Yeaw <dan@yeaw.me>"
+    { name = "Arjan Molenaar", email = "gaphor@gmail.com" },
+    { name = "Dan Yeaw", email = "dan@yeaw.me" },
 ]
 readme = "README.md"
 license = "Apache-2.0"
 keywords = ["gaphor", "hello world", "example", "examples"]
 
-[tool.poetry.dependencies]
-python = ">=3.11,<3.13"
+requires-python = ">=3.11,<3.13"
+
+[project.entry-points."gaphor.services"]
+"hello_world" = "gaphor_helloworld_plugin:HelloWorldPlugin"
+
+[tool.poetry]
+requires-poetry = ">=2.0"
 
 [tool.poetry.group.dev.dependencies]
 # Gaphor should be a dev-dependency, so it's not installed as part of the plugin
-gaphor = "^2.27"
-pytest = "^8.3"
-
-[tool.poetry.plugins."gaphor.services"]
-"hello_world" = "gaphor_helloworld_plugin:HelloWorldPlugin"
+gaphor = ">=2.23"
+pytest = ">=8.1"
 
 [tool.pytest.ini_options]
 testpaths = [
@@ -30,5 +32,5 @@ addopts = [
 ]
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
