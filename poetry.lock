@@ -119,46 +119,46 @@ pgp = ["gpg"]
 
 [[package]]
 name = "gaphas"
-version = "4.1.1"
+version = "5.1.2"
 description = "Gaphas is a GTK diagramming widget"
 optional = false
-python-versions = "<4,>=3.9"
+python-versions = "<4.0,>=3.9"
 groups = ["dev"]
 files = [
-    {file = "gaphas-4.1.1-py3-none-any.whl", hash = "sha256:888aefdd266ffc91cff03768190bec89e0adb1fb903f8e5779d9b900600dd5d0"},
-    {file = "gaphas-4.1.1.tar.gz", hash = "sha256:719db9009962ca6d83f52389020f70ac0206a77da0cf76933cd1918a3953d5ea"},
+    {file = "gaphas-5.1.2-py3-none-any.whl", hash = "sha256:e2f5fcbab3d8278eacfb13529551608ecfdc45ac580fd8f22dff5964efb5b1d0"},
+    {file = "gaphas-5.1.2.tar.gz", hash = "sha256:5dd6b05931f3856a96b623269b50187231b4abf7b9849f48f7eec52898563696"},
 ]
 
 [package.dependencies]
-pycairo = ">=1.20.0,<2.0.0"
-PyGObject = ">=3.38.0,<4.0.0"
+pycairo = ">=1.20.0"
+PyGObject = ">=3.50"
 
 [[package]]
 name = "gaphor"
-version = "2.27.0"
+version = "3.1.0"
 description = "Gaphor is the simple modeling tool written in Python."
 optional = false
-python-versions = "<3.13,>=3.11"
+python-versions = "<3.14,>=3.11"
 groups = ["dev"]
 files = [
-    {file = "gaphor-2.27.0-py3-none-any.whl", hash = "sha256:54c825327c6f2b019f88b16bf2537ba849366ea4dce9ee56848b562973bdc77a"},
-    {file = "gaphor-2.27.0.tar.gz", hash = "sha256:32c6c478ea29e8eb2ad879fa0a4a2bb17b7cfdb4d8fff4075bfb8297414450de"},
+    {file = "gaphor-3.1.0-py3-none-any.whl", hash = "sha256:faf6dbc87bed204b0a0567a99e3933e8da5ad67f9b1be4b96ce5b3a4d490c11a"},
+    {file = "gaphor-3.1.0.tar.gz", hash = "sha256:eab9832e9fedcf15de8bb1311061308dcf76b9a1fb0e68456b22b5d326db127c"},
 ]
 
 [package.dependencies]
-babel = ">=2.10.3,<3.0.0"
-better-exceptions = ">=0.3.3,<0.4.0"
-defusedxml = ">=0.7.1,<0.8.0"
+babel = ">=2.10.3"
+better-exceptions = ">=0.3.3"
+defusedxml = ">=0.7.1"
 dulwich = ">=0.21.7,<0.23.0"
-gaphas = ">=4.0,<5.0"
-generic = ">=1.0.0,<2.0.0"
+gaphas = ">=5.0"
+generic = ">=1.0.0"
 jedi = ">=0.18.1,<0.20.0"
 pillow = ">=10.0.0"
-pycairo = ">=1.22.0,<2.0.0"
+pycairo = ">=1.22.0"
 pydot = ">=1.4.2,<4.0.0"
-PyGObject = ">=3.30,<4.0"
+PyGObject = ">=3.52"
 pyobjc-framework-cocoa = {version = ">=9.0.1,<11.0.0", markers = "sys_platform == \"darwin\""}
-tinycss2 = ">=1.0.2,<2.0.0"
+tinycss2 = ">=1.0.2"
 
 [[package]]
 name = "generic"
@@ -415,13 +415,13 @@ windows-terminal = ["colorama (>=0.4.6)"]
 
 [[package]]
 name = "pygobject"
-version = "3.50.0"
+version = "3.56.3"
 description = "Python bindings for GObject Introspection"
 optional = false
-python-versions = "<4.0,>=3.9"
+python-versions = ">=3.10"
 groups = ["dev"]
 files = [
-    {file = "pygobject-3.50.0.tar.gz", hash = "sha256:4500ad3dbf331773d8dedf7212544c999a76fc96b63a91b3dcac1e5925a1d103"},
+    {file = "pygobject-3.56.3.tar.gz", hash = "sha256:12760e4a0e3d04b6eb95e06f7a27e362c826d567ea613373a92c003b6c70d2d6"},
 ]
 
 [package.dependencies]
@@ -559,4 +559,4 @@ files = [
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.11,<3.13"
-content-hash = "5b5df24db7002175414cc59d4bbbf0538d3e0fbbcc41017b0dab381228df212b"
+content-hash = "d8adbbfc33686c2353cdd528a7761261d37c0dd3c4149a10befacdbe1c231ac8"
