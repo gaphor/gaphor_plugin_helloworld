@@ -20,7 +20,7 @@ requires-poetry = ">=2.0"
 
 [tool.poetry.group.dev.dependencies]
 # Gaphor should be a dev-dependency, so it's not installed as part of the plugin
-gaphor = ">=2.23"
+gaphor = ">=3.1.0"
 pytest = ">=9.0.3"
 
 [tool.pytest.ini_options]
